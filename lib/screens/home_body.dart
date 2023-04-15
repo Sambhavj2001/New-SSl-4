@@ -4,6 +4,7 @@ import 'package:shopping_cos/constants.dart';
 import 'package:shopping_cos/screens/appbar.dart';
 import 'package:shopping_cos/screens/slide.dart';
 import 'package:shopping_cos/screens/category.dart';
+import 'package:shopping_cos/screens/products/recent_products.dart';
 
 class HomeBody extends StatefulWidget {
   const HomeBody({Key? key}) : super(key: key);
@@ -71,15 +72,25 @@ class _HomeBodyState extends State<HomeBody> {
                   )
                 ],
               ),
-              SizedBox(height: 20),
+              // SizedBox(height: 20),
               // ProductSlider(),
               SizedBox(height: 20),
               CategoryList(),
+              SizedBox(height: 20),
+              Container(height: 400, child: RecentProducts()),
             ],
           ),
         ),
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: Column(
+          children: [
+            CircleAvatar(
+              backgroundColor: KPrimaryColor,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

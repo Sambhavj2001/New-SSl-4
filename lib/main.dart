@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_cos/constants.dart';
 import 'package:shopping_cos/screens/home.dart';
 
 void main() {
@@ -14,8 +15,8 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
+          primarySwatch: Colors.blue,
+          appBarTheme: AppBarTheme(color: KPrimaryColor)),
       home: HomeScreen(),
     );
   }
