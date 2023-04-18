@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:shopping_cos/constants.dart';
 import 'package:shopping_cos/screens/appbar.dart';
 import 'package:shopping_cos/screens/slide.dart';
+import 'package:shopping_cos/screens/Side_bar.dart';
 import 'package:shopping_cos/screens/category.dart';
 import 'package:shopping_cos/screens/products/recent_products.dart';
 
@@ -72,25 +73,17 @@ class _HomeBodyState extends State<HomeBody> {
                   )
                 ],
               ),
-              // SizedBox(height: 20),
-              // ProductSlider(),
+              SizedBox(height: 20),
+              ProductSlider(),
               SizedBox(height: 20),
               CategoryList(),
               SizedBox(height: 20),
-              Container(height: 400, child: RecentProducts()),
+              Container(height: 200, child: RecentProducts()),
             ],
           ),
         ),
       ),
-      drawer: Drawer(
-        child: Column(
-          children: [
-            CircleAvatar(
-              backgroundColor: KPrimaryColor,
-            ),
-          ],
-        ),
-      ),
+      drawer: SideBar(),
     );
   }
 }
