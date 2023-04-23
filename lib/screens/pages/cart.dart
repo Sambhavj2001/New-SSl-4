@@ -26,7 +26,7 @@ class _CartScreenState extends State<CartScreen> {
                 children: [
                   SizedBox(
                     height: 100,
-                    child: Image.asset('assets/images/cart.png'),
+                    child: Image.asset('images/cart.png'),
                   ),
                   const SizedBox(
                     height: 10,

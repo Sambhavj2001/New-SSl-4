@@ -25,7 +25,7 @@ class _FavourtieScreenState extends State<FavourtieScreen> {
                 children: [
                   SizedBox(
                     height: 100,
-                    child: Image.asset('assets/images/fav.png'),
+                    child: Image.asset('images/fav.png'),
                   ),
                   const SizedBox(
                     height: 10,
