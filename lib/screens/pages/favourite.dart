@@ -1,28 +1,58 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_cos/screens/bottom_nav_bar.dart';
-import 'package:shopping_cos/screens/enum.dart';
-import 'package:shopping_cos/screens/products/recent_products.dart';
+import 'package:shopping_cos/constants.dart';
+import '../products/product_widget.dart';
+import '../products/products.dart';
 
-class FavouriteScreen extends StatefulWidget {
-  // final List<ProductList> productList;
+class FavourtieScreen extends StatefulWidget {
+  final List<Product> favoritedProducts;
+  const FavourtieScreen({Key? key, required this.favoritedProducts})
+      : super(key: key);
+
   @override
-  State<FavouriteScreen> createState() => _FavouriteScreenState();
+  State<FavourtieScreen> createState() => _FavourtieScreenState();
 }
 
-class _FavouriteScreenState extends State<FavouriteScreen> {
+class _FavourtieScreenState extends State<FavourtieScreen> {
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("FavouriteScreen"),
-      ),
-      body: Padding(
-        padding: EdgeInsets.all(10.0),
-        child: RecentProducts(),
-      ),
-      bottomNavigationBar: BottomNavBar(
-        selectedMenu: MenuState.favourite,
-      ),
+      body: widget.favoritedProducts.isEmpty
+          ? Center(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 100,
+                    child: Image.asset('assets/images/fav.png'),
+                  ),
+                  const SizedBox(
+                    height: 10,
+                  ),
+                  Text(
+                    'Your favorited Products',
+                    style: TextStyle(
+                      color: KPrimaryColor,
+                      fontWeight: FontWeight.w300,
+                      fontSize: 18,
+                    ),
+                  ),
+                ],
+              ),
+            )
+          : Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 30),
+              height: size.height * .5,
+              child: ListView.builder(
+                  itemCount: widget.favoritedProducts.length,
+                  scrollDirection: Axis.vertical,
+                  physics: const BouncingScrollPhysics(),
+                  itemBuilder: (BuildContext context, int index) {
+                    return ProductWidget(
+                        index: index, productList: widget.favoritedProducts);
+                  }),
+            ),
     );
   }
 }

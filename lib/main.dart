@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_cos/constants.dart';
-import 'package:shopping_cos/screens/home.dart';
+import 'package:get/get.dart';
+import 'package:shopping_cos/screens/pages/home.dart';
 import 'package:shopping_cos/screens/login pages/login_1st_page.dart';
+import 'package:shopping_cos/screens/login%20pages/user/user_preferences.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   runApp(const MyApp());
 }
 
@@ -13,13 +15,22 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
+    return GetMaterialApp(
+      title: 'Cosmetics App',
       theme: ThemeData(
-          primarySwatch: Colors.blue,
-          appBarTheme: AppBarTheme(color: KPrimaryColor)),
+        primarySwatch: Colors.blue,
+      ),
       // home: HomeScreen(),
-      home: loginPage(),
+      home: FutureBuilder(
+        future: RememberUserPrefs.readUserInfo(),
+        builder: (context, dataSnapShot) {
+          if (dataSnapShot.data == null) {
+            return LoginScreen();
+          } else {
+            return HomeScreen();
+          }
+        },
+      ),
     );
   }
 }
