@@ -5,7 +5,6 @@ import 'package:shopping_cos/screens/pages/home_body.dart';
 import 'package:shopping_cos/screens/login%20pages/user/current_user.dart';
 import 'package:shopping_cos/screens/pages/Account.dart';
 import 'package:shopping_cos/screens/pages/favourite.dart';
-import 'package:shopping_cos/screens/pages/orders.dart';
 
 import '../products/products.dart';
 
