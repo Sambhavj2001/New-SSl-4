@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:shopping_cos/screens/pages/Account.dart';
 import 'package:shopping_cos/screens/pages/favourite.dart';
 import 'package:shopping_cos/screens/pages/home.dart';
-import 'package:shopping_cos/screens/pages/orders.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({Key? key}) : super(key: key);
@@ -75,13 +74,6 @@ class SideBar extends StatelessWidget {
             leading: Icon(Icons.shopping_cart),
             title: Text('Shopping Cart'),
             onTap: () => {},
-          ),
-          ListTile(
-            leading: Icon(Icons.shopping_bag_outlined),
-            title: Text('Your Orders'),
-            onTap: () => {
-              // Get.to(OrderScreen()),
-            },
           ),
         ],
       ),
