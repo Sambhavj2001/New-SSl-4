@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:shopping_cos/constants.dart';
 
+import '../login pages/user/current_user.dart';
+
 class CustomAppBar extends StatelessWidget {
-  const CustomAppBar({
+  final CurrentUser _currentUser = Get.put(CurrentUser());
+  CustomAppBar({
     super.key,
   });
 
@@ -27,7 +31,10 @@ class CustomAppBar extends StatelessWidget {
           }),
         ),
         Column(
-          children: [Text('Sambhav'), Text('Indore, India')],
+          children: [
+            Text(_currentUser.user.user_name),
+            Text(_currentUser.user.user_email)
+          ],
         ),
         Icon(Icons.shopping_cart_outlined),
       ],

@@ -45,7 +45,7 @@ class _DetailPageState extends State<DetailPage> {
                     width: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: KPrimaryColor.withOpacity(.15),
+                      color: Colors.black54,
                     ),
                     child: Icon(
                       Icons.close,
@@ -62,7 +62,7 @@ class _DetailPageState extends State<DetailPage> {
                     width: 40,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(25),
-                      color: KPrimaryColor.withOpacity(.15),
+                      color: Colors.black54,
                     ),
                     child: IconButton(
                         onPressed: () {
@@ -144,7 +144,7 @@ class _DetailPageState extends State<DetailPage> {
               height: size.height * .5,
               width: size.width,
               decoration: BoxDecoration(
-                color: KPrimaryColor.withOpacity(.4),
+                color: Colors.black54,
                 borderRadius: const BorderRadius.only(
                   topRight: Radius.circular(30),
                   topLeft: Radius.circular(30),
